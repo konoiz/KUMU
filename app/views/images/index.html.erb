@@ -1,0 +1,11 @@
+<h1>Images#index</h1>
+<p>
+<a href="/images/new">Upload new image</a>
+</p>
+<ul>
+    <% @image.each do |image| %>
+        <li>
+        <a href="/images/show/<%= image.id %>"><%= image.title %></a>
+        </li>
+    <% end %>
+</ul>
