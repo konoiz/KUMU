@@ -2,6 +2,9 @@
 <p>
 <a href="/images/new">Upload new image</a>
 </p>
+<% flash.each do |key, value| %>
+    <p style="color:red" class="alert-<%= key %>"><%= value %></p>
+<% end %>
 <ul>
     <% @image.each do |image| %>
         <li>

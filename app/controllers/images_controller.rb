@@ -42,6 +42,19 @@ class ImagesController < ApplicationController
       end
   end
 
+  def destroy
+      @image = Image.find(params[:id])
+      if @image 
+          # delete image
+          File.delete(Rails.root.to_s + '/public' + @image.filepath)
+          # delete record
+          title = @image.title
+          @image.destroy
+          flash[:success] = title+" is deleted"
+          redirect_to "/images/index"
+      end
+  end
+
   private
     def image_params
         params.require(:image).permit(:filepath, :title, :description, :file)

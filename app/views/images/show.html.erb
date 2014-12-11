@@ -6,6 +6,10 @@
 <div>
     <p><%= @image.description %></p>
 </div>
+<div style="text-align:right">
+    <%= link_to "delete", @image, method: :delete, data: {confirm: "you sure?"} %>
+    <a data-confirm="you sure?" data-method="delete" href="/images/<%= @image.id %>" rel="nofollow">delete</a>
+</div>
 <div>
     <a href="/images/index">back to index</a>
 </div>

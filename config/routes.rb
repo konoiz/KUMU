@@ -1,6 +1,8 @@
 KUMU::Application.routes.draw do
   root "images#start"
   post "images" => "images#create"
+  delete "images/:id" => "images#destroy"
+  get "images"  => "images#index"
   get "images/index"
   get "images/show/:id" => "images#show"
   get "images/new"
